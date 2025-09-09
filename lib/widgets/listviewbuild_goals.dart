@@ -15,9 +15,9 @@ class ListViewBuildGoals extends StatelessWidget {
       builder: (context, state) {
         if (state is GetDataSucceeded) {
           if (GoalsCubit.get(context).goalslist.isEmpty) {
-            print("hossammmmmmmm${GoalsCubit.get(context).goalslist}");
             return Expanded(child: NoGoalsYet());
           }
+
           return Expanded(
             child: ListView.builder(
               itemCount: GoalsCubit.get(context).goalslist.length,

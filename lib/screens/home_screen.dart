@@ -5,7 +5,6 @@ import 'package:goals_app/Cubits/goalsCubit/goalstate.dart';
 import 'package:goals_app/widgets/floatingaction_mainscreen.dart';
 import 'package:goals_app/widgets/listviewbuild_goals.dart';
 import 'package:goals_app/widgets/main_container.dart';
-import 'package:goals_app/widgets/no_goals.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
