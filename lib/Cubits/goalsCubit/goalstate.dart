@@ -2,6 +2,8 @@ class Goalstate {}
 
 class InitialState extends Goalstate {}
 
+class InitialSqlLoading extends Goalstate {}
+
 class GetDataLoading extends Goalstate {}
 
 class GetDataSucceeded extends Goalstate {}

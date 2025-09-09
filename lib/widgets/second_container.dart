@@ -3,10 +3,16 @@ import 'package:goals_app/Cubits/goalsCubit/goalcubit.dart';
 import 'package:goals_app/constaints.dart';
 
 class SecondContainer extends StatelessWidget {
-  dynamic id;
-  dynamic goalName;
+  final dynamic id;
+  final dynamic goalName;
+  final VoidCallback? onDelete;
 
-  SecondContainer({super.key, required this.id, required this.goalName});
+  const SecondContainer({
+    super.key,
+    required this.id,
+    required this.goalName,
+    this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -224,8 +230,10 @@ class SecondContainer extends StatelessWidget {
                                     ),
                                   ),
                                   onPressed: () {
+                                    if (onDelete != null) {
+                                      onDelete!();
+                                    }
                                     GoalsCubit.get(context).removerData(id);
-                                    GoalsCubit.get(context).getData();
                                     Navigator.pop(context);
                                   },
                                   child: Row(

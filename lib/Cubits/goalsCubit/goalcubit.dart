@@ -11,6 +11,7 @@ class GoalsCubit extends Cubit<Goalstate> {
   static GoalsCubit get(context) => BlocProvider.of<GoalsCubit>(context);
 
   Future<void> initialSql() async {
+    emit(InitialSqlLoading());
     String databasepath = await getDatabasesPath();
     String path = join(databasepath, "Goals.db");
 

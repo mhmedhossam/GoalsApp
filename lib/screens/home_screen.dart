@@ -22,28 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         if (state is InsertDataSucceeded) {
           ScaffoldMessenger.of(
             context,
-          ).showSnackBar(SnackBar(content: Text("success")));
-          Navigator.pop(context);
-        } else if (state is InsertDataLoading) {
-          showDialog(
-            context: context,
-            builder: (_) {
-              return Center(child: CircularProgressIndicator());
-            },
-          );
-        }
-        if (state is RemoveDataSucceeded) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text("remove successed")));
-          Navigator.pop(context);
-        } else if (state is RemoveDataLoading) {
-          showDialog(
-            context: context,
-            builder: (_) {
-              return Center(child: CircularProgressIndicator());
-            },
-          );
+          ).showSnackBar(SnackBar(content: Text("goal create success")));
         }
       },
       builder: (context, state) {
