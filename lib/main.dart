@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:goals_app/Cubits/goalsCubit/goalcubit.dart';
 import 'package:goals_app/screens/home_screen.dart';
 
-void main() async {
+void main() {
   runApp(GoalsApp());
 }
 

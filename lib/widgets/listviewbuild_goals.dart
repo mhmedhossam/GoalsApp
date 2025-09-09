@@ -9,19 +9,18 @@ class ListViewBuildGoals extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (GoalsCubit.get(context).goalslist.isEmpty) {
+      print("hossammmmmmmm${GoalsCubit.get(context).goalslist}");
+      return Expanded(child: NoGoalsYet());
+    }
     return Expanded(
       child: ListView.builder(
         itemCount: GoalsCubit.get(context).goalslist.length,
         itemBuilder: (context, index) {
-          if (GoalsCubit.get(context).goalslist.isEmpty) {
-            print("hossammmmmmmm${GoalsCubit.get(context).goalslist}");
-            return NoGoalsYet();
-          } else {
-            return SecondContainer(
-              id: "${GoalsCubit.get(context).goalslist[index]['id']}",
-              goalName: "${GoalsCubit.get(context).goalslist[index]['name']}",
-            );
-          }
+          return SecondContainer(
+            id: "${GoalsCubit.get(context).goalslist[index]['id']}",
+            goalName: "${GoalsCubit.get(context).goalslist[index]['name']}",
+          );
         },
       ),
     );
