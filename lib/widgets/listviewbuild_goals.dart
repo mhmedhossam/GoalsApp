@@ -13,11 +13,9 @@ class ListViewBuildGoals extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GoalsCubit, Goalstate>(
       builder: (context, state) {
-        if (state is GetDataSucceeded) {
-          if (GoalsCubit.get(context).goalslist.isEmpty) {
-            return Expanded(child: NoGoalsYet());
-          }
-
+        if (GoalsCubit.get(context).goalslist.isEmpty) {
+          return Expanded(child: NoGoalsYet());
+        } else {
           return Expanded(
             child: ListView.builder(
               itemCount: GoalsCubit.get(context).goalslist.length,
@@ -30,10 +28,15 @@ class ListViewBuildGoals extends StatelessWidget {
               },
             ),
           );
-        } else {
-          return Center(child: CircularProgressIndicator());
         }
       },
+      // if (state is GetDataSucceeded) {
+      //   if (GoalsCubit.get(context).goalslist.isEmpty) {
+      //     return Expanded(child: NoGoalsYet());
+      //   } else {
+      //   return
+      // }
+      // },
     );
   }
 }

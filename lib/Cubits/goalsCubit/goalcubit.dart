@@ -56,7 +56,7 @@ class GoalsCubit extends Cubit<Goalstate> {
     await database
         .rawInsert('INSERT INTO Goals(name) VALUES(?)', [name])
         .then((value) async {
-          await getData(); // تحديث القائمة بعد الإضافة
+          await getData();
           emit(InsertDataSucceeded());
         })
         .catchError((error) {
@@ -78,7 +78,7 @@ class GoalsCubit extends Cubit<Goalstate> {
     await database
         .rawDelete('DELETE FROM Goals WHERE id = ?', [id])
         .then((value) async {
-          await getData(); // تحديث القائمة بعد الحذف
+          await getData();
           emit(RemoveDataSucceeded());
         })
         .catchError((error) {
